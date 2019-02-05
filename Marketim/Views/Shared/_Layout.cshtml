@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>MARKETİM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+    <!-- bootstrap -->
+   
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+   
+    <link href="~/Content/css/bootstrap-responsive.min.css" rel="stylesheet" />
+
+    
+    <link href="~/Content/css/bootstrappage.css" rel="stylesheet" />
+
+    <!-- global styles -->
+   
+    <link href="~/Content/css/flexslider.css" rel="stylesheet" />
+   
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+
+    <!-- scripts -->
+   
+    <script src="~/Content/css/jquery-1.7.2.min.js"></script>
+   
+    <script src="~/Content/css/bootstrap.min.js"></script>
+   
+    <script src="~/Content/css/superfish.js"></script>
+   
+    <script src="~/Content/css/jquery.scrolltotop.js"></script>
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="top-bar" class="container">
+        <div class="row">
+            <div class="span4">
+                <form method="POST" class="search_form">
+                    <input type="text" class="input-block-level search-query" Placeholder="eg. T-sirt">
+                </form>
+            </div>
+            <div class="span8">
+                <div class="account pull-right">
+                    <ul class="user-menu">
+                        <li>@Html.ActionLink("Anasayfa", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li> 
+                        <li>
+                        @Html.ActionLink("Tüm Ürünler","Tumunugoster","Home" , new {area=""} , new { @class="navbar-brand"})</li>
+                        <li>@Html.ActionLink("Hakkımızda", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                       
+                       
+                        <li>@Html.ActionLink("Login", "Login", "Admin", new { area = "" }, new { @class = "navbar-brand" })</li>                     
+                       
+                        
+                        @if (Session["username"] != null) {
+                        <li>@Html.ActionLink("ÇıkışYap", "Logout", "Home", new { area = "" }, new { @class = "navbar-brand" })</li> }
+                        
+
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper" class="container">
+        <section class="navbar main-menu">
+            <div class="navbar-inner main-menu">
+                <a href="index.html" class="logo pull-left">
+                    <img src="~/Content/resimler/marketimicon.png" class="site_logo" alt=""/></a>
+              
+            </div>
+        </section>
+        <section class="homepage-slider" id="home-slider">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        
+                        <img src="~/Content/resimler/bakkal.jpg"  alt="" />
+                    </li>
+                    <li>
+                       
+                        <img src="~/Content/resimler/bakkal1.jpg"  alt="" />
+                       
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="header_text">
+           Bakkalımızda aklınıza gelebilecek her çeşit ürün mevcuttur.
+            
+        </section>
+        @RenderBody()
+      
+        <section id="footer-bar">
+            <div class="row">
+                <div class="span3">
+                    <h4>Yönlendirme</h4>
+                    <ul class="nav">
+                        <li> @Html.ActionLink("Tüm Ürünler", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }) </li>
+                        <li>@Html.ActionLink("Hakkımızda", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("Login", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    </ul>
+                </div>
+              
+               
+            </div>
+        </section>
+        <section id="copyright">
+            <span>@DateTime.Now - Marketim</span>
+        </section>
+    </div>
+  
+    <script src="~/Content/css/common.js"></script>
+    
+    <script src="~/Content/css/jquery.flexslider-min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(document).ready(function () {
+                $('.flexslider').flexslider({
+                    animation: "fade",
+                    slideshowSpeed: 4000,
+                    animationSpeed: 600,
+                    controlNav: false,
+                    directionNav: true,
+                    controlsContainer: ".flex-container" // the container that holds the flexslider
+                });
+            });
+        });
+    </script>
+</body>
+</html>

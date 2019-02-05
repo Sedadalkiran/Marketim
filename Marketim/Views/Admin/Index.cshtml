@@ -1,0 +1,22 @@
+﻿@model Marketim.Models.Product
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>İşlemler</h2>
+
+<li>@Html.ActionLink("Ürün Ekle", "Create", "Product", new { area = "" }, new { @class = "navbar-brand" })</li>
+<li>@Html.ActionLink("Ürün Sil", "Index", "Product", new { area = "" }, new { @class = "navbar-brand" })</li>
+
+<li>@Html.ActionLink("Veresiye Ekle", "Create", "Arrear", new { area = "" }, new { @class = "navbar-brand" })</li>
+<li>@Html.ActionLink("Veresiye Listele", "Listele", "Arrear", new { area = "" }, new { @class = "navbar-brand" })</li>
+
+
+<li>@Html.ActionLink("Kişi Ekle", "Create", "Customer", new { area = "" }, new { @class = "navbar-brand" })</li>
+<li>@Html.ActionLink("Kişi Listele", "Delete", "Customer", new { area = "" }, new { @class = "navbar-brand" })</li>
+
+Veriler
+
+
+
